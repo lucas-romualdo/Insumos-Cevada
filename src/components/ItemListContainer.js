@@ -1,9 +1,21 @@
 import React from 'react';
+import ItemCount from './ItemCount';
 
-const ItemListContainer = ({ greeting }) => (
-    <div className="container mt-4">
-        <h2>{greeting}</h2>
+function ItemListContainer() {
+  const stock = 5;  // Exemplo de estoque
+  const initial = 1; // Quantidade inicial
+
+  // Função de callback para adicionar ao carrinho
+  const handleAdd = (count) => {
+    console.log(`Adicionado ${count} item(s) ao carrinho`);
+  };
+
+  return (
+    <div>
+      <h1>Item List Container</h1>
+      <ItemCount stock={stock} initial={initial} onAdd={handleAdd} />
     </div>
-);
+  );
+}
 
 export default ItemListContainer;
