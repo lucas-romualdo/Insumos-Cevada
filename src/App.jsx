@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
@@ -14,34 +15,28 @@ const App = () => (
 );
 
 export default App;
+=======
+import './App.css';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import navbar from './navbar/navbar';
+import cevada from './navbar/cevada/cevada';
+import Acessórios from "./navbar/acessorios"
+import lupulo from './navbar/lupulo/lupulo';
+import fermentacao from './navbar/fermentacao/fermentacao';
+>>>>>>> f869ab37a6229cfcc588dfb7ecd77908c2731792
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Router>
+      <navbar />
+      <Switch>
+        <Route path='/cevada' exact component={cevada} />
+        <Route path='/cats' component={lupulo} />
+        <Route path='/sheeps' component={fermentacao} />
+        <Route path='/goats' component={Acessórios} />
+      </Switch>
+    </Router>
+  );
 }
 
-export default App
+export default App;
